@@ -9,6 +9,11 @@ class Protected extends React.Component {
             user: ''
         }
     }
+    logOut = (event) => {
+        event.preventDefault();
+        localStorage.removeItem('cool-jwt');
+        this.props.history.push('/');
+    }
     componentDidMount() {
         const jwt = getJWT();
         axios.get('https://workoutdiaryapi-dev.azurewebsites.net/api/User/Informations', { headers: { Authorization: `Bearer ${jwt}` } })
@@ -23,9 +28,30 @@ class Protected extends React.Component {
     }
     render() {
         return(
-            <h1 style={{backgroundColor: 'white', opacity: '0.7', textAlign: 'center'}}>
-                Witaj {this.state.user.firstName}!
-            </h1>
+            <div>
+                <nav>
+                    <ul>
+                        <li>
+                            Moje treningi
+                        </li>
+                        <li>
+                            Moje ćwiczenia
+                        </li>
+                        <li>
+                            Moje schematy
+                        </li>
+                        <li>
+                            Moje konto
+                        </li>
+                        <li>
+                            <button onClick={this.logOut}>Wyloguj się</button>
+                        </li>
+                    </ul>
+                </nav>
+                <h1 style={{backgroundColor: 'white', opacity: '0.7', textAlign: 'center'}}>
+                    Witaj {this.state.user.firstName}!
+                </h1>
+            </div>
         )
     }
 };
