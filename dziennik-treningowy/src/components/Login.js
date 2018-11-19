@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import '../styles/Login.css';
 
 class Login extends Component {
     constructor(props) {
@@ -23,13 +24,18 @@ class Login extends Component {
     }
     render() {
         return(
-            <form onSubmit={this.handleSubmit}>
-                <label>email</label>
-                <input onChange={(event) => this.setState({ email: event.target.value })} type="text" name="email" autoComplete="username"/>
-                <label>password</label>
-                <input onChange={(event) => this.setState({ password: event.target.value })} type="password" name="password" autoComplete="current-password"/>
-                <button type="submit">Log in</button>
-            </form>
+            <div className="login-page">
+                <form className="form" onSubmit={this.handleSubmit}>
+                    <h2>Zaloguj się do systemu</h2>
+                    <div className="form__field">
+                        <input className="form__input" placeholder="username" onChange={(event) => this.setState({ email: event.target.value })} type="text" name="email" autoComplete="username"/>
+                    </div>
+                    <div className="form__field">
+                        <input className="form__input" placeholder="password" onChange={(event) => this.setState({ password: event.target.value })} type="password" name="password" autoComplete="current-password"/>
+                    </div>
+                    <button className="button-submit" type="submit">Zaloguj się</button>
+                </form>
+            </div>
         );
     }
 }

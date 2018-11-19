@@ -13,7 +13,7 @@ class AuthService extends Component {
         const jwt = getJWT();
         if(!jwt) {
             this.props.history.push({ 
-                pathname:'/Login'
+                pathname:'/'
             });
         }
         else {

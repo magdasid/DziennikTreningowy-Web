@@ -18,14 +18,14 @@ class Protected extends React.Component {
             })
         }).catch(err => {
             localStorage.removeItem('cool-jwt');
-            this.props.history.push('/Login');
+            this.props.history.push('/');
         }); 
     }
     render() {
         return(
-            <div>
+            <h1 style={{backgroundColor: 'white', opacity: '0.7', textAlign: 'center'}}>
                 Witaj {this.state.user.firstName}!
-            </div>
+            </h1>
         )
     }
 };
