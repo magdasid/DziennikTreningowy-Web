@@ -5,7 +5,6 @@ import styled from 'styled-components';
 const Navigation = styled.nav`
     width: 100%;
     background-color: #FEE12B;
-    position: fixed;
     top: 0;
 `; 
 const List = styled.ul`

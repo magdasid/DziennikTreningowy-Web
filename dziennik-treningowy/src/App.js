@@ -5,6 +5,7 @@ import './App.css';
 import AuthService from './components/AuthService';
 import UserPage from './components/UserPage';
 import Exercises from './components/Exercises';
+import Menu from './components/Menu';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -14,6 +15,27 @@ const Container = styled.div`
   height: 100vh;
 `;
 
+const Trainings = () => {
+  return(
+      <div>
+          Twoje treningi
+      </div>
+  )
+};
+const Schemas = () => {
+  return(
+      <div>
+          Twoje plany treningowe
+      </div>
+  )
+};
+const About = () => {
+  return(
+      <div>
+          O Tobie
+      </div>
+  )
+};
 class App extends Component {
   render() {
     return (
@@ -24,6 +46,9 @@ class App extends Component {
             <AuthService>
               <Route path="/user" component={UserPage}/>
               <Route path="/user/exercises" component={Exercises}/>
+              <Route path="/user/trainings" component={Trainings}/>
+              <Route path="/user/schemas" component={Schemas}/>
+              <Route path="/user/account" component={About}/>
             </AuthService>
           </Switch>
         </BrowserRouter>
