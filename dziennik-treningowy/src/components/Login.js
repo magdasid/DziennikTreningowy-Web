@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import '../styles/Login.css';
 import styled from 'styled-components';
 
 const LoginSection = styled.section`
