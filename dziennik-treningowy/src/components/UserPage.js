@@ -1,8 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import getJWT from '../helpers/getJWT';
+import Menu from '../components/Menu';
 
-class Protected extends React.Component {
+class UserPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -21,6 +22,7 @@ class Protected extends React.Component {
             this.setState({
                 user: res.data
             })
+            console.log(this.state.user);
         }).catch(err => {
             localStorage.removeItem('cool-jwt');
             this.props.history.push('/');
@@ -29,26 +31,8 @@ class Protected extends React.Component {
     render() {
         return(
             <div>
-                <nav>
-                    <ul>
-                        <li>
-                            Moje treningi
-                        </li>
-                        <li>
-                            Moje ćwiczenia
-                        </li>
-                        <li>
-                            Moje schematy
-                        </li>
-                        <li>
-                            Moje konto
-                        </li>
-                        <li>
-                            <button onClick={this.logOut}>Wyloguj się</button>
-                        </li>
-                    </ul>
-                </nav>
-                <h1 style={{backgroundColor: 'white', opacity: '0.7', textAlign: 'center'}}>
+                <Menu />
+                <h1 style={{marginTop: '50px', backgroundColor: 'white', opacity: '0.7', textAlign: 'center'}}>
                     Witaj {this.state.user.firstName}!
                 </h1>
             </div>
@@ -56,4 +40,4 @@ class Protected extends React.Component {
     }
 };
 
-export default Protected;
+export default UserPage;
