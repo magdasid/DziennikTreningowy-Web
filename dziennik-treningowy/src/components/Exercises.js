@@ -3,7 +3,7 @@ import React from 'react';
 const Exercises = () => {
     return(
         <div>
-            Witaj w Dzienniku Treningowym LOL!
+            Witaj w dzienniku treningowym!
         </div>
     )
 };

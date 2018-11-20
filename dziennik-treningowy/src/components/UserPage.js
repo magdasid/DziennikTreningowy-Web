@@ -32,9 +32,6 @@ class UserPage extends React.Component {
         return(
             <div>
                 <Menu />
-                <h1 style={{marginTop: '50px', backgroundColor: 'white', opacity: '0.7', textAlign: 'center'}}>
-                    Witaj {this.state.user.firstName}!
-                </h1>
             </div>
         )
     }
