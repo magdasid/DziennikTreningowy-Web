@@ -19,13 +19,13 @@ class App extends Component {
     return (
       <Container>
         <BrowserRouter>
-          <div>
+          <Switch>
             <Route exact path="/" component={Login}/>
             <AuthService>
               <Route path="/user" component={UserPage}/>
               <Route path="/user/exercises" component={Exercises}/>
             </AuthService>
-          </div>
+          </Switch>
         </BrowserRouter>
       </Container>
     );
